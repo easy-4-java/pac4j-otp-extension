@@ -4,6 +4,8 @@
 
 [![Java](https://img.shields.io/badge/Java-8-orange)](https://github.com/easy-4-java/pac4j-otp-extension) [![License](https://img.shields.io/badge/license-Apache%202.0-green)](./LICENSE)
 
+pac4j-otp-extension is an extension of the pac4j security library that aims to add
+
 ## Table of Contents
 
 - [1. Project Overview](#1-project-overview)
