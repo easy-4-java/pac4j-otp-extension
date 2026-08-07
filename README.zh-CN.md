@@ -4,6 +4,8 @@
 
 [![Java](https://img.shields.io/badge/Java-21-orange)](https://github.com/easy-4-java/pac4j-otp-extension) [![License](https://img.shields.io/badge/license-Apache%202.0-green)](./LICENSE)
 
+pac4j-otp-extension 是 pac4j 安全库的扩展组件，目标是为基于 pac4j 的应用增加一次性密码（OTP）能力，包括 HOTP（基于计数器）与 TOTP（基于时间）两种形态。
+
 ## 目录
 
 - [1. 项目概述](#1-项目概述)
