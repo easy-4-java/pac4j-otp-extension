@@ -35,7 +35,7 @@ import java.io.Serializable;
  *                    {@code null} when the credential is constructed lazily
  *                    by the framework.
  *
- * @author easy-4-java contributors
+ * @author [@Loong Wan](https://github.com/loong10k)
  * @since 3.0.0
  * @see Serializable
  */
