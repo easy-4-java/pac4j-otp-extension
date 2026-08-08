@@ -2,7 +2,7 @@
 
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
-[![Java](https://img.shields.io/badge/Java-17-orange)](https://github.com/easy-4-java/pac4j-otp-extension) [![License](https://img.shields.io/badge/license-Apache%202.0-green)](./LICENSE)
+[![Java](https://img.shields.io/badge/Java-21-orange)](https://github.com/easy-4-java/pac4j-otp-extension) [![License](https://img.shields.io/badge/license-Apache%202.0-green)](./LICENSE)
 
 pac4j-otp-extension is an extension of the pac4j security library that aims to add
 
@@ -110,12 +110,12 @@ Artifacts are published to the aliyun repository and GitHub Releases; they are *
 <dependency>
     <groupId>io.github.easy4j</groupId>
     <artifactId>pac4j-otp-extension</artifactId>
-    <version>2.0.x.x.20260630-SNAPSHOT</version>
+    <version>3.0.x.x.20260630-SNAPSHOT</version>
 </dependency>
 ```
 
 ```groovy
-implementation 'io.github.easy4j:pac4j-otp-extension:2.0.x.x.20260630-SNAPSHOT'
+implementation 'io.github.easy4j:pac4j-otp-extension:3.0.x.x.20260630-SNAPSHOT'
 ```
 
 ## 6. Quick Start

@@ -2,7 +2,7 @@
 
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
-[![Java](https://img.shields.io/badge/Java-17-orange)](https://github.com/easy-4-java/pac4j-otp-extension) [![License](https://img.shields.io/badge/license-Apache%202.0-green)](./LICENSE)
+[![Java](https://img.shields.io/badge/Java-21-orange)](https://github.com/easy-4-java/pac4j-otp-extension) [![License](https://img.shields.io/badge/license-Apache%202.0-green)](./LICENSE)
 
 pac4j-otp-extension 是 pac4j 安全库的扩展组件，目标是为基于 pac4j 的应用增加一次性密码（OTP）能力，包括 HOTP（基于计数器）与 TOTP（基于时间）两种形态。
 
@@ -106,12 +106,12 @@ easy4j 项目的版本线：
 <dependency>
     <groupId>io.github.easy4j</groupId>
     <artifactId>pac4j-otp-extension</artifactId>
-    <version>2.0.x.x.20260630-SNAPSHOT</version>
+    <version>3.0.x.x.20260630-SNAPSHOT</version>
 </dependency>
 ```
 
 ```groovy
-implementation 'io.github.easy4j:pac4j-otp-extension:2.0.x.x.20260630-SNAPSHOT'
+implementation 'io.github.easy4j:pac4j-otp-extension:3.0.x.x.20260630-SNAPSHOT'
 ```
 
 ## 6. 快速开始
