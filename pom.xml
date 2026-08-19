@@ -38,6 +38,146 @@
         </developer>
     </developers>
 
+    <!-- 版本属性定义：Java 版本、依赖版本与 Maven 插件版本统一管理 -->
+    <properties>
+        <!-- ═══ 第一段: 基础属性（自然排序）═══ -->
+        <java.version>1.8</java.version>
+        <maven.compiler.release>${java.version}</maven.compiler.release>
+        <maven.version>3.9.16</maven.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Dependency versions -->
+        <commons-httpclient.version>3.1</commons-httpclient.version>
+        <commons-lang3.version>3.20.0</commons-lang3.version>
+        <fastjson.version>2.0.62</fastjson.version>
+        <lombok.version>1.18.46</lombok.version>
+        <pac4j.version>5.0.0</pac4j.version>
+        <slf4j.version>2.0.18</slf4j.version>
+        <!-- Maven Plugin versions -->
+        <maven-clean-plugin.version>3.5.0</maven-clean-plugin.version>
+        <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
+        <maven-dependency-plugin.version>3.8.1</maven-dependency-plugin.version>
+        <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
+        <maven-enforcer-plugin.version>3.6.3</maven-enforcer-plugin.version>
+        <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
+        <maven-install-plugin.version>3.1.4</maven-install-plugin.version>
+        <maven-jacoco-plugin.version>0.8.15</maven-jacoco-plugin.version>
+        <maven-jar-plugin.version>3.5.0</maven-jar-plugin.version>
+        <maven-javadoc-plugin.version>3.11.2</maven-javadoc-plugin.version>
+        <maven-nexus-staging-plugin.version>1.7.0</maven-nexus-staging-plugin.version>
+        <maven-release-plugin.version>3.3.1</maven-release-plugin.version>
+        <maven-resources-plugin.version>3.5.0</maven-resources-plugin.version>
+        <maven-source-plugin.version>3.4.0</maven-source-plugin.version>
+        <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
+    </properties>
+
+    <!-- 依赖版本统一管理（dependencyManagement） -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- For Pac4j -->
+            <dependency>
+                <groupId>org.pac4j</groupId>
+                <artifactId>pac4j-core</artifactId>
+                <version>${pac4j.version}</version>
+            </dependency>
+            <!-- For Pac4j -->
+            <dependency>
+                <groupId>org.pac4j</groupId>
+                <artifactId>pac4j-config</artifactId>
+                <version>${pac4j.version}</version>
+            </dependency>
+            <!-- For Pac4j -->
+            <dependency>
+                <groupId>org.pac4j</groupId>
+                <artifactId>pac4j-http</artifactId>
+                <version>${pac4j.version}</version>
+            </dependency>
+            <!-- For Fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <!-- For Commons Lang3 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/commons-httpclient/commons-httpclient -->
+            <dependency>
+                <groupId>commons-httpclient</groupId>
+                <artifactId>commons-httpclient</artifactId>
+                <version>${commons-httpclient.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.commons/not-yet-commons-ssl -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>not-yet-commons-ssl</artifactId>
+                <version>${commons-not-yet-ssl.version}</version>
+            </dependency>
+            <!-- For Lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <!-- For Slf4j -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- 项目依赖（dependencies） -->
+    <dependencies>
+        <!-- For Fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <!-- For Pac4j -->
+        <dependency>
+            <groupId>org.pac4j</groupId>
+            <artifactId>pac4j-core</artifactId>
+        </dependency>
+        <!-- For Pac4j -->
+        <dependency>
+            <groupId>org.pac4j</groupId>
+            <artifactId>pac4j-config</artifactId>
+        </dependency>
+        <!-- For Pac4j -->
+        <dependency>
+            <groupId>org.pac4j</groupId>
+            <artifactId>pac4j-http</artifactId>
+        </dependency>
+        <!-- For Commons Lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <!-- For Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- For Slf4j -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <!-- JUnit 4 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
     <!-- 制品发布仓库配置（distributionManagement） -->
     <distributionManagement>
         <repository>
@@ -487,145 +627,4 @@
             </build>
         </profile>
     </profiles>
-
-    <!-- 版本属性定义：Java 版本、依赖版本与 Maven 插件版本统一管理 -->
-    <properties>
-        <!-- ═══ 第一段: 基础属性（自然排序）═══ -->
-        <java.version>1.8</java.version>
-        <maven.compiler.release>${java.version}</maven.compiler.release>
-        <maven.version>3.9.16</maven.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- Dependency versions -->
-        <commons-httpclient.version>3.1</commons-httpclient.version>
-        <commons-lang3.version>3.20.0</commons-lang3.version>
-        <fastjson.version>2.0.62</fastjson.version>
-        <pac4j.version>5.0.0</pac4j.version>
-        <!-- Maven Plugin versions -->
-        <maven-clean-plugin.version>3.5.0</maven-clean-plugin.version>
-        <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
-        <maven-dependency-plugin.version>3.8.1</maven-dependency-plugin.version>
-        <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
-        <maven-enforcer-plugin.version>3.6.3</maven-enforcer-plugin.version>
-        <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
-        <maven-install-plugin.version>3.1.4</maven-install-plugin.version>
-        <maven-jar-plugin.version>3.5.0</maven-jar-plugin.version>
-        <maven-javadoc-plugin.version>3.11.2</maven-javadoc-plugin.version>
-        <maven-nexus-staging-plugin.version>1.7.0</maven-nexus-staging-plugin.version>
-        <maven-release-plugin.version>3.3.1</maven-release-plugin.version>
-        <maven-resources-plugin.version>3.5.0</maven-resources-plugin.version>
-        <maven-source-plugin.version>3.4.0</maven-source-plugin.version>
-        <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
-        <lombok.version>1.18.46</lombok.version>
-        <maven-jacoco-plugin.version>0.8.15</maven-jacoco-plugin.version>
-        <slf4j.version>2.0.18</slf4j.version>
-    </properties>
-
-
-    <!-- 依赖版本统一管理（dependencyManagement） -->
-    <dependencyManagement>
-        <dependencies>
-            <!-- For Pac4j -->
-            <dependency>
-                <groupId>org.pac4j</groupId>
-                <artifactId>pac4j-core</artifactId>
-                <version>${pac4j.version}</version>
-            </dependency>
-            <!-- For Pac4j -->
-            <dependency>
-                <groupId>org.pac4j</groupId>
-                <artifactId>pac4j-config</artifactId>
-                <version>${pac4j.version}</version>
-            </dependency>
-            <!-- For Pac4j -->
-            <dependency>
-                <groupId>org.pac4j</groupId>
-                <artifactId>pac4j-http</artifactId>
-                <version>${pac4j.version}</version>
-            </dependency>
-            <!-- For Fastjson -->
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>fastjson</artifactId>
-                <version>${fastjson.version}</version>
-            </dependency>
-            <!-- For Commons Lang3 -->
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-lang3</artifactId>
-                <version>${commons-lang3.version}</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/commons-httpclient/commons-httpclient -->
-            <dependency>
-                <groupId>commons-httpclient</groupId>
-                <artifactId>commons-httpclient</artifactId>
-                <version>${commons-httpclient.version}</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/org.apache.commons/not-yet-commons-ssl -->
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>not-yet-commons-ssl</artifactId>
-                <version>${commons-not-yet-ssl.version}</version>
-            </dependency>
-            <!-- For Lombok -->
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-                <scope>provided</scope>
-            </dependency>
-            <!-- For Slf4j -->
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
-    <!-- 项目依赖（dependencies） -->
-    <dependencies>
-        <!-- For Fastjson -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-        </dependency>
-        <!-- For Pac4j -->
-        <dependency>
-            <groupId>org.pac4j</groupId>
-            <artifactId>pac4j-core</artifactId>
-        </dependency>
-        <!-- For Pac4j -->
-        <dependency>
-            <groupId>org.pac4j</groupId>
-            <artifactId>pac4j-config</artifactId>
-        </dependency>
-        <!-- For Pac4j -->
-        <dependency>
-            <groupId>org.pac4j</groupId>
-            <artifactId>pac4j-http</artifactId>
-        </dependency>
-        <!-- For Commons Lang3 -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-        </dependency>
-        <!-- For Lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <!-- For Slf4j -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
-        <!-- JUnit 4 -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.2</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
 </project>
